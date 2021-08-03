@@ -14,12 +14,13 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(400, 300)
-        self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
+        self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)#
         self.buttonBox.setGeometry(QtCore.QRect(30, 240, 341, 32))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName("buttonBox")
-
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Abort|QtWidgets.QDialogButtonBox.Ok)
+        # Cancel,Okをセットしている
+        self.buttonBox.setObjectName("bBox2")
+        print(self.buttonBox)
         self.retranslateUi(Dialog)
         self.buttonBox.accepted.connect(Dialog.accept)
         self.buttonBox.rejected.connect(Dialog.reject)
@@ -31,10 +32,15 @@ class Ui_Dialog(object):
 
 
 if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
+    import sys #ここでインポートもあり・・
+    app = QtWidgets.QApplication(sys.argv) #sys.argv=sample3_read.py
+    print(sys.argv)
     Dialog = QtWidgets.QDialog()
     ui = Ui_Dialog() #Ui_Dialog()クラスのインスタンスを作成
-    ui.setupUi(Dialog)
+    ui.setupUi(Dialog) 
+    """
+    インスタンスuiにQtWidgets.QDialog()のインスタンスをセット
+    setupUiメソッドのなかでDialogオブジェクトに対して設定を行っている
+    """
     Dialog.show()
     sys.exit(app.exec_())
