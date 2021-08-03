@@ -20,8 +20,7 @@ def window():
     b1.setText("click here")
     b1.clicked.connect(clicked)
 
-    win.show()
-    sys.exit(app.exec_())
+    win.show()いる
     s#ys.exit(app.exec_)だと
     # time.sleep(5)
     #ウィンドウがすぐに消えてしまうのでtime
