@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>image/cat.ico</normaloff>image/cat.ico</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">MainWindow
 {
