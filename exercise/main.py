@@ -1,3 +1,4 @@
+#import start_wiget2
 from test import start_wiget2
 
 if __name__ == '__main__':
