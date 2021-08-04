@@ -5,7 +5,9 @@ import time
 
 def clicked():
     print("clicked")
+    
 
+    
 def window():
     app = QApplication(sys.argv)
     win=QMainWindow()
@@ -14,14 +16,16 @@ def window():
 
     label = QtWidgets.QLabel(win)
     label.setText("first label")
+    #label.objectName(self,"label1")
     label.move(50,50)
 
     b1 = QtWidgets.QPushButton(win)
     b1.setText("click here")
-    b1.clicked.connect(clicked)
+    b1.clicked.connect(clicked())
 
     win.show()
-    s#ys.exit(app.exec_)だと
+    sys.exit(app.exec_())
+    #ys.exit(app.exec_)だと
     # time.sleep(5)
     #ウィンドウがすぐに消えてしまうのでtime
 
