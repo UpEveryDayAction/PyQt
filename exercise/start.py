@@ -7,4 +7,4 @@ def hello():
 if __name__ == '__main__':
 
     import sys
-    import test.ui_sample
+    from test import ui_sample
