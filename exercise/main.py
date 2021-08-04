@@ -1,12 +1,13 @@
 #import start_wiget2
-from test import start_wiget2
+#import test.start_wiget2
+from test import test1
 
 if __name__ == '__main__':
 
     import sys
-    app = start_wiget2.QtWidgets.QApplication(sys.argv)
-    MainWindow = start_wiget2.QtWidgets.QMainWindow()
-    ui = start_wiget2.Ui_MainWindow()
+    app = test1.QtWidgets.QApplication(sys.argv)
+    MainWindow = test1.QtWidgets.QMainWindow()
+    ui = test1.Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
