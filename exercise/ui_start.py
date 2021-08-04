@@ -2,6 +2,9 @@
 #import test.start_wiget2
 from test import test1
 
+def hello():
+    print("hello")
+    
 if __name__ == '__main__':
 
     import sys
