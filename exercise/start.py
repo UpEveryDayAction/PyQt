@@ -1,5 +1,6 @@
-#import start_wiget2
-#import test.start_wiget2
+from ui_test import ui_sample
+from lib import lib_a
+
 
 def hello():
     print("hello")
@@ -7,4 +8,3 @@ def hello():
 if __name__ == '__main__':
 
     import sys
-    from test import ui_sample
