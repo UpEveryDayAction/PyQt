@@ -221,8 +221,7 @@ class Ui_MainWindow(object):
         self.actionpaste_data_only.setText(_translate("MainWindow", "paste (data only)"))
         self.actionpaste_with_syosiki.setText(_translate("MainWindow", "paste( with syosiki)"))
 
-    def image_func(self):
-        
+    def image_func(self):   
         face1.main()
 
 import sys
