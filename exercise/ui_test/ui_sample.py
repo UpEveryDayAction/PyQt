@@ -8,7 +8,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from face1 import main
+from .face1 import *
+from exercise.ui_test import face1
 
 class Ui_MainWindow(object):
 
@@ -220,9 +221,9 @@ class Ui_MainWindow(object):
         self.actionpaste_data_only.setText(_translate("MainWindow", "paste (data only)"))
         self.actionpaste_with_syosiki.setText(_translate("MainWindow", "paste( with syosiki)"))
 
-    def cv_sample(self):
+    def image_func(self):
         
-        main()
+        face1.main()
 
 import sys
 app = QtWidgets.QApplication(sys.argv)
