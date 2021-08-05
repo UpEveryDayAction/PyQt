@@ -191,7 +191,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        """
         self.pushButton.clicked.connect(self.cv_sample())
+        """
 
 
     def retranslateUi(self, MainWindow):
