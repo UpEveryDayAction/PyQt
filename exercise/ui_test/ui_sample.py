@@ -224,6 +224,9 @@ class Ui_MainWindow(object):
         self.actionpaste_data_only.setText(_translate("MainWindow", "paste (data only)"))
         self.actionpaste_with_syosiki.setText(_translate("MainWindow", "paste( with syosiki)"))
         self.pushButton.clicked.connect(self.cv_sample)
+        """
+        self.pushButton.clicked.connect(self.cv_sample())　だとcv_sampleがすぐに実行されてしまうエラーが起きる
+        """
 
     def cv_sample(self):
         main()
