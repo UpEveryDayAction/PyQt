@@ -8,8 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from .face1 import *
-from exercise.ui_test import face1
+import face1
 
 class Ui_MainWindow(object):
 
