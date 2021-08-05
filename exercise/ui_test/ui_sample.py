@@ -8,7 +8,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import face1
+from ui_test.face1 import *
+#from face1 import * ではimportできない
 
 
 class Ui_MainWindow(object):
@@ -192,9 +193,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        """
-        self.pushButton.clicked.connect(self.cv_sample())
-        """
+        
+
+        
 
 
     def retranslateUi(self, MainWindow):
@@ -222,9 +223,11 @@ class Ui_MainWindow(object):
         self.actionnew.setShortcut(_translate("MainWindow", "Ctrl+N"))
         self.actionpaste_data_only.setText(_translate("MainWindow", "paste (data only)"))
         self.actionpaste_with_syosiki.setText(_translate("MainWindow", "paste( with syosiki)"))
+        self.pushButton.clicked.connect(self.cv_sample)
 
-    def image_func(self):   
-        face1.main()
+    def cv_sample(self):
+        main()
+        
 
 import sys
 app = QtWidgets.QApplication(sys.argv)
