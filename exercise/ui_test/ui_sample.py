@@ -11,6 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
@@ -190,6 +191,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.pushButton.clicked.connect(self.cv_sample())
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -217,6 +220,8 @@ class Ui_MainWindow(object):
         self.actionpaste_data_only.setText(_translate("MainWindow", "paste (data only)"))
         self.actionpaste_with_syosiki.setText(_translate("MainWindow", "paste( with syosiki)"))
 
+    def cv_sample():
+        import face1
 
 import sys
 app = QtWidgets.QApplication(sys.argv)
