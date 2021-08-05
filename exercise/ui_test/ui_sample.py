@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from face1 import main
 
 class Ui_MainWindow(object):
 
@@ -221,7 +221,8 @@ class Ui_MainWindow(object):
         self.actionpaste_with_syosiki.setText(_translate("MainWindow", "paste( with syosiki)"))
 
     def cv_sample(self):
-        import face1
+        
+        main()
 
 import sys
 app = QtWidgets.QApplication(sys.argv)
