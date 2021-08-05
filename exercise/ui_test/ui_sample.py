@@ -10,6 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import face1
 
+
 class Ui_MainWindow(object):
 
     def setupUi(self, MainWindow):
