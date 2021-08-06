@@ -1,0 +1,10 @@
+kindleにあるようなuiファイルを
+pyファイルで直接読み込みは成功してない。
+
+pyuic5 -x file.ui -o start.py
+
+でpyファイルに変換して
+
+from start import Ui_MainWindow
+
+で読み込む方法だったら動く
