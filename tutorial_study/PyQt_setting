@@ -1,0 +1,13 @@
+centralwidget{
+background-color: rgb(0, 255, 127); #bg_color
+color: rgb(61, 61, 61); #font
+}
+
+QGroupBox
+{
+    font-size: 30px;
+    font-weight: bold;
+	background-color: rgb(166, 166, 166); # group_bg_color
+	border-style: none;
+	padding-top: 10px;
+}

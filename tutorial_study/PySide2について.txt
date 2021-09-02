@@ -1,0 +1,10 @@
+import sys
+from PySide2.QtWidgets import QApplication, QLabel
+# Qt の Python バインディングとしてPyQtとPySideがあり、ライセンスが異なる
+# 前者はGPLで後者はLGPL。PySideはPyQtのGPLを嫌って開発されたものらしい。
+# https://wa3.i-3-i.info/word13200.html
+# GPLであるPyQtは再配布する場合GPLになるらしい。
+app = QApplication(sys.argv)
+label = QLabel("Hello World!")
+label.show()
+app.exec_()
