@@ -9,12 +9,22 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Product Manager")
         self.setWindowIcon(QIcon('icons/icon.ico'))
         self.setGeometry(450,150,1350,750)
+        self.setFixedSize(self.size())
 
         self.UI()
         self.show()
 
     def UI(self):
-        pass
+        self.toolBar()
+
+    def toolBar(self):
+        self.tb=self.addToolBar("Tool Bar")
+        #############Toolbar Button
+        #############Add Product
+        self.addProduct=QAction(QIcon('icons/add.png'),"Add Product",self)
+        self.tb.addAction(self.addProduct)
+        #############Add Member
+
     
 def main():
     App=QApplication(sys.argv)

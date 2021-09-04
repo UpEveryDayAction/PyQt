@@ -4,10 +4,12 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QSize,Qt
 import random
 from pygame import mixer
+import time
 
+#########global
 musicList=[]
-##########グローバルにするためにここでinit
-mixer.init()
+mixer.init() #グローバルにするためにここでinit
+muted=False
 
 class Player(QWidget):
     def __init__(self):
@@ -58,11 +60,17 @@ class Player(QWidget):
         self.muteButton=QToolButton()
         self.muteButton.setIcon(QIcon("icons/mute.png"))
         self.muteButton.setIconSize(QSize(24,24))
-        self.muteButton.setToolTip("Mute")
+        self.muteButton.setToolTip("Mute") #
+        self.muteButton.clicked.connect(self.muteSound)
 
         ###########################vlume Slider
         self.volumeSlider=QSlider(Qt.Horizontal)
         self.volumeSlider.setToolTip("Volume")
+        self.volumeSlider.setValue(70)
+        self.volumeSlider.setMinimum(0)
+        self.volumeSlider.setMaximum(100)
+        mixer.music.set_volume(0.7)
+        self.volumeSlider.valueChanged.connect(self.setVolume)
 
         ############################Play List
         self.playList=QListWidget()
@@ -136,9 +144,29 @@ class Player(QWidget):
         try:
             mixer.music.load(musicList[index])
             mixer.music.play()
+            time.sleep(5)
+            # mixer.music.pause()
+            # time.sleep(5)
+            # mixer.music.unpause()
+            # 一時停止とそこからの再生をテスト
+            #http://westplain.sakuraweb.com/translate/pygame/Music.cgi
         except:
             pass
+
+    def setVolume(self):
+        self.volume=self.volumeSlider.value()
+        # print(self.volume)
+        mixer.music.set_volume(self.volume/100)
         
+    def muteSound(self):
+        global muted
+        if muted == False:
+            mixer.music.set_volume(0.0)
+            muted = True
+            self.muteButton.setIcon(QIcon('icons/unmute.png'))
+            self.muteButton.setToolTip("UnMute")
+            self.volumeSlider.setValue(0)
+
 def main():
     #モジュールの名前を引数にQpplicationのインスタンスを作成
     App=QApplication(sys.argv) 

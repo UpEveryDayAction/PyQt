@@ -1,0 +1,7 @@
+◇condaコマンドが認識されない
+PS C:\Users\DearM\Documents\GitHub\PyQt> conda activate pyb35
+conda: The term 'conda' is not recognized as a name of 
+a cmdlet, function, script file, or executable program.Check the spelling of the name, or if a path was included, verify that the path is correct and try again.     
+
+◇VScodeが
+PS C:\Users\DearM\Documents\GitHub\PyQt> & C:/Users/DearM/anaconda3/envs/pyb35/python.exe c:/Users/DearM/Documents/GitHub/PyQt/tutorial_study/udemy/productManagementApp/main.py
