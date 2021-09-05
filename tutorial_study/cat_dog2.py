@@ -8,6 +8,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import PyQt5.QtWidgets
+import PyQt5
 
 
 class Ui_MainWindow(object):
@@ -50,6 +52,8 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+    import inspect,configparser
+    print(inspect.getsource(PyQt5.QtWidgets))
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
