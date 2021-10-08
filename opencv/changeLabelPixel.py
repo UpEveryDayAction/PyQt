@@ -8,7 +8,7 @@ import numpy as np
 
 
 class VideoThread(QThread):
-    change_pixmap_signal = pyqtSignal(np.ndarray)
+    change_pixmap_signal = pyqtSignal(np.ndarray) # 引数がemitでシグナル発信されたときに渡されるデータの型を指定する
 
     def run(self):
         # capture from web cam
@@ -19,7 +19,7 @@ class VideoThread(QThread):
 ###### Mod 1 ##################
 #   functionはここに入れ込む
 ###############################
-                self.change_pixmap_signal.emit(cv_img) # emit=シグナル発信
+                self.change_pixmap_signal.emit(cv_img) # emit=シグナル発信。cv_imgがスロットdef update_imageに渡される
 
 
 class App(QWidget):
@@ -53,7 +53,7 @@ class App(QWidget):
 
 
 
-    @pyqtSlot(np.ndarray) #スロットのdef
+    @pyqtSlot(np.ndarray) #スロットのdef、引数はcv_imgはシグナルから渡されたもの
     def update_image(self, cv_img):
         """Updates the image_label with a new opencv image"""
         qt_img = self.convert_cv_qt(cv_img)
