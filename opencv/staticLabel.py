@@ -16,6 +16,9 @@ class VideoThread(QThread):
         while True:
             ret, cv_img = cap.read()
             if ret:
+###### Mod 1 ##################
+#   functionはここに入れ込む
+###############################
                 self.change_pixmap_signal.emit(cv_img) # emit=シグナル発信
 
 
@@ -23,6 +26,9 @@ class App(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("PyQtのなかでopencvの機能を表示する")
+###### Mod 2 #################
+#   画面サイズの調整
+##############################
         self.disply_width = 640
         self.display_height = 480
         # create the label that holds the image
@@ -39,7 +45,7 @@ class App(QWidget):
         self.setLayout(vbox)
 
         # create the video capture thread
-        self.thread = VideoThread() # ビデオのインスタンス
+        self.thread = VideoThread() # VideoThreadクラス
         # connect its signal to the update_image slot
         self.thread.change_pixmap_signal.connect(self.update_image)
         # start the thread
@@ -47,7 +53,7 @@ class App(QWidget):
 
 
 
-    @pyqtSlot(np.ndarray)
+    @pyqtSlot(np.ndarray) #スロットのdef
     def update_image(self, cv_img):
         """Updates the image_label with a new opencv image"""
         qt_img = self.convert_cv_qt(cv_img)
