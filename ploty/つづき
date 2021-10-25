@@ -1,0 +1,13 @@
+つぎ調べるならここから調べる。
+https://plotly.com/python/pie-charts/
+https://github.com/plotly/plotly.py/tree/master/doc/python
+
+
+
+(済）list_ndarray_df.ipynb
+・df <--> arry の変換
+・df <- シリーズからの変換
+
+（済）pie-chart.ipynb
+pie-chartのスクリプトでの表示の仕方
+
