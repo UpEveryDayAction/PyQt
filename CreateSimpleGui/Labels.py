@@ -18,12 +18,16 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout()
 
         for n in range(10):
-            btn = QPushButton(str(n))
+            btn = QPushButton(str(n)) #変数だけどオブジェクト名str(n)が違う
             btn.pressed.connect( lambda n=n: self.my_custom_fn(n) )
             # ex) n=4としたself.mycustom_fn(self,4)にコネクトするようになる
             # btn.pressed.connect( lambda: self.my_custom_fn(n) )
 
             layout.addWidget(btn)
+
+        btn11 = QPushButton(str("11"))
+        btn.pressed.connect(lambda n=11: self.my_custom_fn("11"))
+        layout.addWidget(btn11)
 
         widget = QWidget()
         widget.setLayout(layout)

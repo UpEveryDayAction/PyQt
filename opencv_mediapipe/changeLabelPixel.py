@@ -1,3 +1,4 @@
+import config
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout
 from PyQt5.QtGui import QPixmap
@@ -6,6 +7,7 @@ import cv2
 from PyQt5.QtCore import pyqtSignal, pyqtSlot, Qt, QThread
 import numpy as np
 
+function_name = config.function_name
 
 class VideoThread(QThread):
     change_pixmap_signal = pyqtSignal(np.ndarray) # 引数がemitでシグナル発信されたときに渡されるデータの型を指定する
@@ -25,7 +27,8 @@ class VideoThread(QThread):
 class App(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("PyQtのなかでopencvの機能を表示する")
+        global function_name
+        self.setWindowTitle("PyQtのなかでopencvの機能を表示する"+ function_name)
 ###### Mod 2 #################
 #   画面サイズの調整
 ##############################
